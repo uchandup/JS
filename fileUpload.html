@@ -17,8 +17,16 @@
 
     .file-upload {
       margin-top: 20px;
-    }
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 
+    }
+    .file-upload-label {
+      border-radius: 5px;
+      cursor: pointer;
+    }
     .errorstooltips {
       display: none;
       color: red;
@@ -37,46 +45,102 @@
     #content-table {
       display: none;
     }
+
+    #datatbody input[type="text"], 
+    #datatbody input[type="number"],
+    #datatbody input[type="email"]  
+    {
+      height: 30px;
+    }
+    #file-from{
+      margin-bottom: 15px;
+    }
+    .file-upload{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .div-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table#content-table thead {
+    color: white;
+    background-color: #337ab7;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 767px) {
+  .div-table {
+    overflow-x: auto;
+  }
+}
+
+
+
+
   </style>
 </head>
 
 <body>
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-md-6">
+      <div class="col-md-12" id="file-from">
         <h2 class="text-center">File Upload Form</h2>
         <form action="#" method="post" enctype="multipart/form-data" class="file-upload">
           <div class="form-group">
-            <label for="fileInput">Choose File:</label>
+            <label for="fileInput" class="file-upload-label">Choose File:</label>
             <input type="file" id="fileInput" name="fileInput"
               accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
           </div>
+          <div>
           <button type="submit" onclick="formatToJson()" class="btn btn-primary">Upload</button>
+         
+        </div>
         </form>
+        <div style="text-align: right;">
+     
+          <button class="btn btn-primary"> <a href="https://github.com/uchandup/JS/blob/main/Export.xlsx" download="Export.xlsx" style="color: white;" class="right-button">Download Excel</a></button>
+        </div>
         <div class="errorstooltips">Erros or toolTips</div>
       </div>
     </div>
 
     <p class="NoteContent">content Here Note*</p>
 
-    <table id="content-table" class="table">
+    <div class="div-table">
+    <table id="content-table" class="table table-bordered">
       <thead>
         <tr>
           <th>First name</span></th>
           <th>Last name </span></th>
-          <th>age</span></th>
+          <th>Age</span></th>
           <th>Email</span></th>
           <th>City</span></th>
-          <th>address 1 </span></th>
-          <th>address 2 </span></th>
-          <th>state</span></th>
-          <th>pincode</span></th>
-          <th>comments</span></th>
+          <th>Address 1 </span></th>
+          <th>Address 2 </span></th>
+          <th>State</span></th>
+          <th>Pincode</span></th>
+          <th>Comments</span></th>
 
         </tr>
       </thead>
       <tbody id="datatbody"></tbody>
     </table>
+  </div>
   </div>
 
   <script>
@@ -87,12 +151,21 @@
     //counter
     var dataCounter = 0;
 
+    //
+    var validateError = true;
+
     //validate empty values 
     const validateEmpty = (input, cell) => {
       if (input.val() === "") {
-        input.closest('td').css('background-color', 'red');
+        input.closest('td').css({
+          'border-top': '3px solid red',
+          'border-left': '3px solid red'
+          });
       } else {
-        input.closest('td').css('background-color', '');
+        input.closest('td').css({
+          'border-top': '',
+          'border-left': ''
+          });
       }
     };
 
@@ -104,9 +177,15 @@
     };
     const validateEmail = (input) => {
       if (input.val() !== "" && !validateEmailFormat(input.val())) {
-        input.closest('td').css('background-color', 'red');
+        input.closest('td').css({
+            'border-top': '3px solid red',
+            'border-left': '3px solid red'
+          });
       } else {
-        input.closest('td').css('background-color', '');
+        input.closest('td').css({
+          'border-top': '',
+          'border-left': ''
+          });
       }
     };
 
@@ -114,9 +193,15 @@
     function validateNotContainsNumberOrSpecialSymbol(input) {
       var value = input.val();
       if (/[\d!@#$%^&*()_+={}\[\]:;<>,.?~\\/-]/.test(value)) {
-        input.closest('td').css('background-color', 'red');
+        input.closest('td').css({
+          'border-top': '3px solid red',
+          'border-left': '3px solid red'
+          });
       } else {
-        input.closest('td').css('background-color', '');
+        input.closest('td').css({
+            'border-top': '',
+            'border-left': ''
+          });
       }
     }
 
@@ -125,9 +210,15 @@
       var value = input.val();
       if (!/^\d+$/.test(value)) {
 
-        input.closest('td').css('background-color', 'red');
+        input.closest('td').css({
+          'border-top': '3px solid red',
+          'border-left': '3px solid red'
+          });
       } else {
-        input.closest('td').css('background-color', '');
+        input.closest('td').css({
+          'border-top': '',
+          'border-left': ''
+          });
       }
     }
 
@@ -136,7 +227,10 @@
       $('.dataBox').keyup(function (event) {
     if (event.keyCode === 9) { // Check if Tab key is pressed
         validateChecker();
-        $(this).closest('td').css('background-color', 'red');
+        $(this).closest('td').css({
+            'border-top': '3px solid red',
+            'border-left': '3px solid red'
+          });
     }
 });
   }
