@@ -1,0 +1,56 @@
+SAMl Authentication:
+    What is SAML Authentication:
+
+    SAML - Security Assertion Markup Language 
+
+    SAML is an XML based standard for exchanging authentication and authorization data between parties, 
+    in particular, between an identity provider(IDP) and a servicers provider(SP). 
+    Single sign-on (SSO) functionality is frequently implemented using it.
+
+    Why SAML 
+        In order to enable smooth and consistent authentication across different platoforms(salesforce, jera, MS)
+        SAML exchanges assertion that contian user identity information - uses Single sign-on (SSO)  
+
+    -> Uses salesforce 
+
+
+windows vs SAML
+        While both Windows Authentication and SAML serve the purpose of authentication, 
+        they operate in different contexts and may be used in different types of environments.
+        Windows Authentication is specific to Windows-based systems and Active Directory, 
+        while SAML is a more generalized standard that can be implemented across various platforms and technologies.
+
+
+        its uses XML based protocol 
+
+OPENID :
+    --> OPENID uses single set of credentials to access mutliple applications or websites without need of sperate username and password
+
+    -->uses GOOGLE 
+
+     --> its uses HTTP (HyperText transfer protocol) and JSON (JavaScript Object Notation) 
+
+
+Kerberos :
+    --> After logging into their Windows computer, a user can access a variety of intranet services, 
+        including file shares and internal apps, by using Kerberos without having to enter their login information again.
+    --> uses secret-key cryptography     
+    --> Kerberos use in windoes authentication from 2000 
+    --> its support SSO single sign-on 
+
+
+
+OAUTH 2.0 Authentication:
+    --> is way of two websites talk each other without sharing your password  
+
+    --> its based on Access tokens 
+
+    --> example: login to github ==>
+
+    --> i used button login from google in github website, it will redirect to goole account and i will login, then 
+    will create access token redirect to github with access token. github will store my access token for while 
+    then we can acess the github sever. 
+
+    --> its uses HTTP (HyperText transfer protocol) and JSON (JavaScript Object Notation) 
+
+

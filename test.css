@@ -1,0 +1,178 @@
+:root {
+  --primary-color: #204062;
+  --gold: #e5a00d;
+  --secondary-color: #37738f;
+}
+/* .t-Header-logo {
+    width: 26%;
+  } */
+/* .t-Header-branding {
+    background-color: #204062;
+    height: 72px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+  } */
+.t-NavigationBar-item {
+  width: auto;
+  min-width: 105px;
+}
+.t-NavigationBar-item:hover {
+  color: #e5a00d !important;
+}
+.t-Header-navBar .t-Button--header {
+  font-size: 1rem;
+}
+
+.logo-name {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 800;
+  height: 0px;
+}
+.sub-txt {
+  font-size: 0.82rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.t-Breadcrumb {
+  list-style: none;
+  overflow: auto;
+  padding: 1.5px 7px;
+  margin-top: 3px;
+}
+.t-Breadcrumb-item a:hover {
+  text-decoration: underline;
+  color: #e5a00d;
+}
+.t-Breadcrumb li:first-child a {
+  border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+}
+.t-Breadcrumb li,
+.t-Breadcrumb li a,
+.t-Breadcrumb li h1 {
+  display: inline-block;
+}
+.t-Breadcrumb li:not(:first-child) {
+  margin-left: -13px;
+}
+.t-Breadcrumb li + li:before {
+  padding: 0;
+  content: "";
+}
+.t-Breadcrumb li a,
+.t-Breadcrumb li h1 {
+  padding: 0 10px;
+}
+.t-Breadcrumb li a,
+.t-Breadcrumb li:not(:first-child) h1 {
+  height: 36px;
+  padding: 0 10px 0 25px;
+  line-height: 34px;
+}
+.t-Breadcrumb li:first-child a {
+  padding: 0 10px;
+}
+.t-Breadcrumb li a,
+.t-Breadcrumb li h1 {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  font-size: 0.9rem;
+}
+.t-Breadcrumb li:first-child a {
+  padding-left: 10px;
+}
+.t-Breadcrumb li a:after,
+.t-Breadcrumb li a:before,
+.t-Breadcrumb li h1:after,
+.t-Breadcrumb li h1:before {
+  position: absolute;
+  top: -1px;
+  width: 0;
+  height: 0;
+  content: "";
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+.t-Breadcrumb li a:before,
+.t-Breadcrumb li h1:before {
+  right: -10px;
+  z-index: 3;
+  border-left-color: var(--primary-color);
+  border-left-style: solid;
+  border-left-width: 10px;
+}
+.t-Breadcrumb li a:after,
+.t-Breadcrumb li h1:after {
+  right: -11px;
+  z-index: 2;
+  border-left: 11px solid #fff;
+}
+.t-Breadcrumb li:last-child h1:after {
+  border-left: 11px solid var(--primary-color);
+}
+.t-Breadcrumb li.active a,
+.t-Breadcrumb li.active h1 {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.t-Breadcrumb li.active:first-child a {
+  padding-left: 10px;
+}
+
+.t-Breadcrumb li.active a:after,
+.t-Breadcrumb li.active a:before,
+.t-Breadcrumb li.active h1:after,
+.t-Breadcrumb li.active h1:before {
+  position: absolute;
+  top: -1px;
+  width: 0;
+  height: 0;
+  content: "";
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+.t-Breadcrumb li.active a:before,
+.t-Breadcrumb li.active h1:before {
+  right: -10px;
+  z-index: 3;
+  border-left-color: #007bff;
+  border-left-style: solid;
+  border-left-width: 11px;
+}
+.t-Breadcrumb li.active a:after,
+.t-Breadcrumb li.active h1:after {
+  right: -11px;
+  z-index: 2;
+  border-left: 10px solid #007bff;
+}
+.t-Body-title {
+  height: 48px;
+  background: #d7a034;
+  width: 100%;
+}
+.t-Body-title:after {
+  background: inherit !important;
+  z-index: -1;
+}
+
+.nav-list {
+  position: absolute;
+  left: 650px;
+  font-weight: bold;
+}
+
+.t-Button-label {
+  font-size: 1rem;
+  font-weight: 600;
+}
