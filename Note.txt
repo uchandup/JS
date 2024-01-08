@@ -57,15 +57,27 @@ OAUTH 2.0 Authentication:
 
 
 
-Azure Ad  - 
+Azure Ad  
+MS AL authorization authentication lib - token based authentication     
+    --> MS AL is Microsoft Authication Library 
+    --> is a tool that allows developer to access security tokens from the Microsoft identity platform to authenticate users 
 
-MS AL authorization authentication lib - token based authoications 
+    --> To intall it npm i @azure/msal-browser
+
+
+    -->it have /authRedirect.JS
+    --> /authPopup.js 
+
+        auth:{
+            clientId:"",
+            authority:"",
+            redirectUri:"",
+        }
+
 b to c & b to b- azure ad
+
+
+
 git flow 
 azure resorces 
 bit buckect -atals c 
-
-
-feedraditio    
-
-Jira tickect tool 
