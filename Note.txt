@@ -54,3 +54,18 @@ OAUTH 2.0 Authentication:
     --> its uses HTTP (HyperText transfer protocol) and JSON (JavaScript Object Notation) 
 
 
+
+
+
+Azure Ad  - 
+
+MS AL authorization authentication lib - token based authoications 
+b to c & b to b- azure ad
+git flow 
+azure resorces 
+bit buckect -atals c 
+
+
+feedraditio    
+
+Jira tickect tool 
